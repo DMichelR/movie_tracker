@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/searchFragment">
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.movie_tracker.ui.fragments.SearchFragment"
+        android:label="Buscar Películas"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/actionSearchFragmentToMovieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.movie_tracker.ui.fragments.FavoritesFragment"
+        android:label="Favoritas"
+        tools:layout="@layout/fragment_movie_list">
+        <action
+            android:id="@+id/actionFavoritesFragmentToMovieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/watchedFragment"
+        android:name="com.example.movie_tracker.ui.fragments.WatchedFragment"
+        android:label="Vistas"
+        tools:layout="@layout/fragment_movie_list">
+        <action
+            android:id="@+id/actionWatchedFragmentToMovieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.example.movie_tracker.ui.fragments.MovieDetailFragment"
+        android:label="Detalles"
+        tools:layout="@layout/fragment_movie_detail">
+        <argument
+            android:name="movieId"
+            app:argType="integer" />
+    </fragment>
+</navigation>
